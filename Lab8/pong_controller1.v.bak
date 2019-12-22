@@ -1,0 +1,28 @@
+module pong_controller1(Clock, QLEFT, iRESET, iRSRV, S, LSI, sIDLE)
+	input Clock, QLEFT, iRESET, iRSRV;
+	output [1:0] S;
+	output LSI, ps;
+	reg[2:1] PSTATE, NSTATE;
+	parameter [2:1] A= 2'b00, B=2'b01, C=2'b10;
+	
+	always*(PSTATE)
+		case(PSTATE)
+			A: if() NSTATe = B;
+				else NSTATE = A;
+			B: if() NSTATE = C;
+				else NSTATE = A;
+			C: if() NSTATE = C;
+				else NSTATE = A;
+				default Y = sIDLE;
+			endcase
+			
+			always @(negedge iRESET, posedge Clock)
+				if(iRESET == 0) PSTATE <= A;
+				else PSTATE <= NSTATE;
+				
+			
+			assign z = (PSTATE == C);
+			
+		endmodule;
+				
+	

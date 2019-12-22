@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at pb_clock.v(20): always construct contains both blocking and non-blocking assignments File: Z:/dcengr/Labs/Lab8/pb_clock.v Line: 20

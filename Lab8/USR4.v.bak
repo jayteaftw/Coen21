@@ -1,0 +1,37 @@
+module USR4( X, RSI, LSI, S, CLK, Q);
+	input [3:0] X;
+	input RSI, LSI, CLK;
+	input [1:0] S;
+	output [3:0] Q;
+	
+	always @(*)
+		if( s[1] == 0 & S[0] == 0)
+			begin 
+			Q[0] = Q[0];
+			Q[1] = Q[1];
+			Q[2] = Q[2];
+			Q[3] = Q[3];
+			end
+		else if(s[1] == 0 & S[0] == 1)
+			begin 
+			Q[0] = Q[1];
+			Q[1] = Q[2];
+			Q[2] = Q[3];
+			Q[3] = RSI;
+			end
+		else if(s[1] == 1 & S[0] == 0)
+			begin 
+			Q[0] = LSI;
+			Q[1] = Q[0];
+			Q[2] = Q[1];
+			Q[3] = Q[2];
+			end
+		else
+			begin 
+			Q[0] = X[0];
+			Q[1] = X[1];
+			Q[2] = X[2];
+			Q[3] = X[3];
+			end
+			
+		endmodule;
