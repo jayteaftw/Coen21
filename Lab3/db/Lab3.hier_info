@@ -1,0 +1,49 @@
+|traficlight
+Cl <= CS.DB_MAX_OUTPUT_PORT_TYPE
+CS => Cl.DATAIN
+CS => inst.IN0
+CS => inst21.IN0
+CS => inst15.IN1
+CS => inst19.IN1
+RL <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+LS => inst3.IN0
+LS => inst8.IN1
+LS => inst13.IN0
+LS => inst12.IN2
+LS => inst17.IN1
+LS => inst16.IN1
+RR => inst5.IN0
+RR => inst2.IN0
+RS => inst5.IN1
+RS => inst1.IN0
+RS => inst13.IN1
+RS => inst12.IN1
+RS => inst17.IN0
+RS => inst16.IN0
+LL <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+CLb <= inst21.DB_MAX_OUTPUT_PORT_TYPE
+RLb <= inst22.DB_MAX_OUTPUT_PORT_TYPE
+LLb <= inst23.DB_MAX_OUTPUT_PORT_TYPE
+Seg[0] <= bin_7seg:inst9.seg[0]
+Seg[1] <= bin_7seg:inst9.seg[1]
+Seg[2] <= bin_7seg:inst9.seg[2]
+Seg[3] <= bin_7seg:inst9.seg[3]
+Seg[4] <= bin_7seg:inst9.seg[4]
+Seg[5] <= bin_7seg:inst9.seg[5]
+Seg[6] <= bin_7seg:inst9.seg[6]
+
+
+|traficlight|bin_7seg:inst9
+bi_digit[0] => Decoder0.IN3
+bi_digit[1] => Decoder0.IN2
+bi_digit[2] => Decoder0.IN1
+bi_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
