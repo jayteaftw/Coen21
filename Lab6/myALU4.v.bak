@@ -1,0 +1,15 @@
+module myALU4( P, A, B, C0, R, C4, V, Z)
+{
+	 	 input C0;
+	 	 input [3:0] A, B, P;
+	 	 output [3:0] R;
+	 	 output V, Z, C4;
+	 	 wire [3:0] Y;
+		
+
+	 	 mux4to1(b[3:0], p[2:1],Y[3:0]);
+	 	
+		
+
+	 	 myAdder4( A[3:0], Y[3:0], C0, C4, V, R[3:0]);
+} 
