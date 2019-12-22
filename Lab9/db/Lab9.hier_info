@@ -1,0 +1,207 @@
+|Lab9
+HEX0[0] <= bin_7seg:inst1.seg[0]
+HEX0[1] <= bin_7seg:inst1.seg[1]
+HEX0[2] <= bin_7seg:inst1.seg[2]
+HEX0[3] <= bin_7seg:inst1.seg[3]
+HEX0[4] <= bin_7seg:inst1.seg[4]
+HEX0[5] <= bin_7seg:inst1.seg[5]
+HEX0[6] <= bin_7seg:inst1.seg[6]
+CLOCK_50 => clock_module:inst.CLOCK_50
+SW[0] => counter:inst6.RESET
+SW[0] => pong_controller2:inst2.iRESET
+SW[0] => counter:inst7.RESET
+SW[1] => clock_module:inst.switches[0]
+SW[2] => clock_module:inst.switches[1]
+KEY[0] => inst9.IN0
+KEY[1] => inst11.IN0
+KEY[2] => inst12.IN0
+KEY[3] => inst10.IN0
+HEX1[0] <= bin_7seg:inst4.seg[0]
+HEX1[1] <= bin_7seg:inst4.seg[1]
+HEX1[2] <= bin_7seg:inst4.seg[2]
+HEX1[3] <= bin_7seg:inst4.seg[3]
+HEX1[4] <= bin_7seg:inst4.seg[4]
+HEX1[5] <= bin_7seg:inst4.seg[5]
+HEX1[6] <= bin_7seg:inst4.seg[6]
+LEDR[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] <= Q[4].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[5] <= Q[5].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[6] <= Q[6].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= Q[7].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= Q[8].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= Q[9].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[10] <= Q[10].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[11] <= Q[11].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab9|bin_7seg:inst1
+bi_digit[0] => Decoder0.IN3
+bi_digit[1] => Decoder0.IN2
+bi_digit[2] => Decoder0.IN1
+bi_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab9|counter:inst6
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab9|clock_module:inst
+switches[0] => Mux0.IN1
+switches[1] => Mux0.IN0
+CLOCK_50 => cnt[0].CLK
+CLOCK_50 => cnt[1].CLK
+CLOCK_50 => cnt[2].CLK
+CLOCK_50 => cnt[3].CLK
+CLOCK_50 => cnt[4].CLK
+CLOCK_50 => cnt[5].CLK
+CLOCK_50 => cnt[6].CLK
+CLOCK_50 => cnt[7].CLK
+CLOCK_50 => cnt[8].CLK
+CLOCK_50 => cnt[9].CLK
+CLOCK_50 => cnt[10].CLK
+CLOCK_50 => cnt[11].CLK
+CLOCK_50 => cnt[12].CLK
+CLOCK_50 => cnt[13].CLK
+CLOCK_50 => cnt[14].CLK
+CLOCK_50 => cnt[15].CLK
+CLOCK_50 => cnt[16].CLK
+CLOCK_50 => cnt[17].CLK
+CLOCK_50 => cnt[18].CLK
+CLOCK_50 => cnt[19].CLK
+clk1 <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab9|pong_controller2:inst2
+QLEFT => always0.IN0
+QLEFT => NSTATE.DATAA
+QLEFT => always0.IN0
+QLEFT => NSTATE.DATAA
+QRIGHT => always0.IN0
+QRIGHT => NSTATE.DATAA
+QRIGHT => always0.IN0
+QRIGHT => NSTATE.DATAA
+iRESET => NSTATE.OUTPUTSELECT
+iRESET => NSTATE.OUTPUTSELECT
+iRESET => NSTATE.OUTPUTSELECT
+iRESET => NSTATE.OUTPUTSELECT
+iRESET => NSTATE.OUTPUTSELECT
+iRESET => NSTATE.OUTPUTSELECT
+iRESET => Selector8.IN5
+iRESET => Selector8.IN6
+iRESET => Selector8.IN7
+iRESET => Selector8.IN8
+iRESET => missL.IN1
+iRESET => Selector10.IN4
+iRESET => Selector13.IN4
+iRESET => missR.IN1
+iRSRV => NSTATE.OUTPUTSELECT
+iRSRV => NSTATE.OUTPUTSELECT
+iRSRV => Selector9.IN3
+iLSRV => NSTATE.DATAA
+iLSRV => NSTATE.DATAA
+iRPAD => always0.IN1
+iRPAD => always0.IN1
+iLPAD => always0.IN1
+iLPAD => always0.IN1
+clk1 => PSTATE~1.DATAIN
+S[0] <= S[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+S[1] <= S[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+LCT <= LCT$latch.DB_MAX_OUTPUT_PORT_TYPE
+RCT <= RCT$latch.DB_MAX_OUTPUT_PORT_TYPE
+LSI <= LSI$latch.DB_MAX_OUTPUT_PORT_TYPE
+RSI <= RSI$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab9|pong12:inst3
+RSI => Q.DATAB
+LSI => Q.DATAB
+S[0] => always0.IN0
+S[0] => always0.IN0
+S[0] => always0.IN0
+S[1] => always0.IN1
+S[1] => always0.IN1
+S[1] => always0.IN1
+CLK => Q[0]~reg0.CLK
+CLK => Q[1]~reg0.CLK
+CLK => Q[2]~reg0.CLK
+CLK => Q[3]~reg0.CLK
+CLK => Q[4]~reg0.CLK
+CLK => Q[5]~reg0.CLK
+CLK => Q[6]~reg0.CLK
+CLK => Q[7]~reg0.CLK
+CLK => Q[8]~reg0.CLK
+CLK => Q[9]~reg0.CLK
+CLK => Q[10]~reg0.CLK
+CLK => Q[11]~reg0.CLK
+Q[0] <= Q[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= Q[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= Q[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= Q[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[4] <= Q[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[5] <= Q[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[6] <= Q[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[7] <= Q[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[8] <= Q[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[9] <= Q[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[10] <= Q[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Q[11] <= Q[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab9|bin_7seg:inst4
+bi_digit[0] => Decoder0.IN3
+bi_digit[1] => Decoder0.IN2
+bi_digit[2] => Decoder0.IN1
+bi_digit[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab9|counter:inst7
+clk => out[0]~reg0.CLK
+clk => out[1]~reg0.CLK
+clk => out[2]~reg0.CLK
+clk => out[3]~reg0.CLK
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+RESET => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+incc => out.OUTPUTSELECT
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
