@@ -1,0 +1,272 @@
+|Lab7
+HEX0[0] <= spec_7seg:inst2.seg[0]
+HEX0[1] <= spec_7seg:inst2.seg[1]
+HEX0[2] <= spec_7seg:inst2.seg[2]
+HEX0[3] <= spec_7seg:inst2.seg[3]
+HEX0[4] <= spec_7seg:inst2.seg[4]
+HEX0[5] <= spec_7seg:inst2.seg[5]
+HEX0[6] <= spec_7seg:inst2.seg[6]
+KEY[0] => my_status_code_continuous:inst3.PB1
+KEY[0] => inst14.IN0
+KEY[0] => inst13.IN0
+CLOCK_50 => clock_module:inst4.CLOCK_50
+SW[0] => clock_module:inst4.switches[0]
+SW[1] => clock_module:inst4.switches[1]
+HEX1[0] <= spec_7seg:inst.seg[0]
+HEX1[1] <= spec_7seg:inst.seg[1]
+HEX1[2] <= spec_7seg:inst.seg[2]
+HEX1[3] <= spec_7seg:inst.seg[3]
+HEX1[4] <= spec_7seg:inst.seg[4]
+HEX1[5] <= spec_7seg:inst.seg[5]
+HEX1[6] <= spec_7seg:inst.seg[6]
+HEX2[0] <= spec_7seg:inst1.seg[0]
+HEX2[1] <= spec_7seg:inst1.seg[1]
+HEX2[2] <= spec_7seg:inst1.seg[2]
+HEX2[3] <= spec_7seg:inst1.seg[3]
+HEX2[4] <= spec_7seg:inst1.seg[4]
+HEX2[5] <= spec_7seg:inst1.seg[5]
+HEX2[6] <= spec_7seg:inst1.seg[6]
+
+
+|Lab7|spec_7seg:inst2
+bi_digit[0] => Decoder0.IN3
+bi_digit[0] => Decoder2.IN1
+bi_digit[1] => Decoder0.IN2
+bi_digit[2] => Decoder0.IN1
+bi_digit[2] => Decoder1.IN1
+bi_digit[3] => Decoder0.IN0
+bi_digit[3] => Decoder1.IN0
+bi_digit[3] => Decoder2.IN0
+seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7|my_status_code_continuous:inst3
+PB1 => comb.IN0
+PB1 => comb.IN0
+EQ => comb.IN1
+EQ => comb.IN1
+codeS[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+codeS[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+codeS[2] <= <VCC>
+codeS[3] <= <VCC>
+
+
+|Lab7|LPM_COMPARE:inst5
+dataa[0] => cmpr_d5f:auto_generated.dataa[0]
+dataa[1] => cmpr_d5f:auto_generated.dataa[1]
+dataa[2] => cmpr_d5f:auto_generated.dataa[2]
+dataa[3] => cmpr_d5f:auto_generated.dataa[3]
+datab[0] => cmpr_d5f:auto_generated.datab[0]
+datab[1] => cmpr_d5f:auto_generated.datab[1]
+datab[2] => cmpr_d5f:auto_generated.datab[2]
+datab[3] => cmpr_d5f:auto_generated.datab[3]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+alb <= <GND>
+aeb <= cmpr_d5f:auto_generated.aeb
+agb <= <GND>
+aleb <= <GND>
+aneb <= <GND>
+ageb <= <GND>
+
+
+|Lab7|LPM_COMPARE:inst5|cmpr_d5f:auto_generated
+aeb <= aeb_result_wire[0].DB_MAX_OUTPUT_PORT_TYPE
+dataa[0] => data_wire[0].IN0
+dataa[1] => data_wire[0].IN0
+dataa[2] => data_wire[1].IN0
+dataa[3] => data_wire[1].IN0
+datab[0] => data_wire[0].IN1
+datab[1] => data_wire[0].IN1
+datab[2] => data_wire[1].IN1
+datab[3] => data_wire[1].IN1
+
+
+|Lab7|LPM_COUNTER:inst6
+clock => cntr_kdi:auto_generated.clock
+clk_en => cntr_kdi:auto_generated.clk_en
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_kdi:auto_generated.q[0]
+q[1] <= cntr_kdi:auto_generated.q[1]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|Lab7|LPM_COUNTER:inst6|cntr_kdi:auto_generated
+clk_en => counter_reg_bit[1].IN0
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7|clock_module:inst4
+switches[0] => Equal0.IN1
+switches[0] => Equal1.IN0
+switches[0] => Equal2.IN1
+switches[0] => Equal3.IN1
+switches[1] => Equal0.IN0
+switches[1] => Equal1.IN1
+switches[1] => Equal2.IN0
+switches[1] => Equal3.IN0
+CLOCK_50 => CLOCK_50.IN1
+clk1 <= clk1$latch.DB_MAX_OUTPUT_PORT_TYPE
+clk2 <= clk2$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7|clock_module:inst4|clock_counter:cc
+CLOCK_50 => CLOCK_2~reg0.CLK
+CLOCK_50 => clk2_counter[0].CLK
+CLOCK_50 => clk2_counter[1].CLK
+CLOCK_50 => clk2_counter[2].CLK
+CLOCK_50 => clk2_counter[3].CLK
+CLOCK_50 => clk2_counter[4].CLK
+CLOCK_50 => clk2_counter[5].CLK
+CLOCK_50 => clk2_counter[6].CLK
+CLOCK_50 => clk2_counter[7].CLK
+CLOCK_50 => CLOCK_1~reg0.CLK
+CLOCK_50 => clk1_counter[0].CLK
+CLOCK_50 => clk1_counter[1].CLK
+CLOCK_50 => clk1_counter[2].CLK
+CLOCK_50 => clk1_counter[3].CLK
+CLOCK_50 => clk1_counter[4].CLK
+CLOCK_50 => clk1_counter[5].CLK
+CLOCK_50 => clk1_counter[6].CLK
+CLOCK_50 => clk1_counter[7].CLK
+CLOCK_50 => main_out.CLK
+CLOCK_50 => main_counter[0].CLK
+CLOCK_50 => main_counter[1].CLK
+CLOCK_50 => main_counter[2].CLK
+CLOCK_50 => main_counter[3].CLK
+CLOCK_50 => main_counter[4].CLK
+CLOCK_50 => main_counter[5].CLK
+CLOCK_50 => main_counter[6].CLK
+CLOCK_50 => main_counter[7].CLK
+CLOCK_50 => main_counter[8].CLK
+CLOCK_50 => main_counter[9].CLK
+CLOCK_50 => main_counter[10].CLK
+CLOCK_50 => main_counter[11].CLK
+CLOCK_50 => main_counter[12].CLK
+CLOCK_50 => main_counter[13].CLK
+CLOCK_50 => main_counter[14].CLK
+CLOCK_50 => main_counter[15].CLK
+CLOCK_50 => main_counter[16].CLK
+CLOCK_1 <= CLOCK_1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLOCK_2 <= CLOCK_2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7|LPM_COUNTER:inst7
+clock => cntr_7ki:auto_generated.clock
+clk_en => cntr_7ki:auto_generated.clk_en
+cnt_en => ~NO_FANOUT~
+updown => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+aset => ~NO_FANOUT~
+aconst => ~NO_FANOUT~
+aload => ~NO_FANOUT~
+sclr => ~NO_FANOUT~
+sset => ~NO_FANOUT~
+sconst => ~NO_FANOUT~
+sload => ~NO_FANOUT~
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+cin => ~NO_FANOUT~
+q[0] <= cntr_7ki:auto_generated.q[0]
+q[1] <= cntr_7ki:auto_generated.q[1]
+cout <= <GND>
+eq[0] <= <GND>
+eq[1] <= <GND>
+eq[2] <= <GND>
+eq[3] <= <GND>
+eq[4] <= <GND>
+eq[5] <= <GND>
+eq[6] <= <GND>
+eq[7] <= <GND>
+eq[8] <= <GND>
+eq[9] <= <GND>
+eq[10] <= <GND>
+eq[11] <= <GND>
+eq[12] <= <GND>
+eq[13] <= <GND>
+eq[14] <= <GND>
+eq[15] <= <GND>
+
+
+|Lab7|LPM_COUNTER:inst7|cntr_7ki:auto_generated
+clk_en => counter_reg_bit[1].IN0
+clock => counter_reg_bit[1].CLK
+clock => counter_reg_bit[0].CLK
+q[0] <= counter_reg_bit[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= counter_reg_bit[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7|spec_7seg:inst
+bi_digit[0] => Decoder0.IN3
+bi_digit[0] => Decoder2.IN1
+bi_digit[1] => Decoder0.IN2
+bi_digit[2] => Decoder0.IN1
+bi_digit[2] => Decoder1.IN1
+bi_digit[3] => Decoder0.IN0
+bi_digit[3] => Decoder1.IN0
+bi_digit[3] => Decoder2.IN0
+seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab7|spec_7seg:inst1
+bi_digit[0] => Decoder0.IN3
+bi_digit[0] => Decoder2.IN1
+bi_digit[1] => Decoder0.IN2
+bi_digit[2] => Decoder0.IN1
+bi_digit[2] => Decoder1.IN1
+bi_digit[3] => Decoder0.IN0
+bi_digit[3] => Decoder1.IN0
+bi_digit[3] => Decoder2.IN0
+seg[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= Decoder2.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

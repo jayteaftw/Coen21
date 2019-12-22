@@ -1,0 +1,92 @@
+$comment
+	File created using the following command:
+		vcd file Lab7.msim.vcd -direction
+$end
+$date
+	Thu Nov 14 13:56:09 2019
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module my_status_code_continuous_vlg_vec_tst $end
+$var reg 1 ! EQ $end
+$var reg 1 " PB1 $end
+$var wire 1 # codeS [3] $end
+$var wire 1 $ codeS [2] $end
+$var wire 1 % codeS [1] $end
+$var wire 1 & codeS [0] $end
+
+$scope module i1 $end
+$var wire 1 ' gnd $end
+$var wire 1 ( vcc $end
+$var wire 1 ) unknown $end
+$var tri1 1 * devclrn $end
+$var tri1 1 + devpor $end
+$var tri1 1 , devoe $end
+$var wire 1 - codeS[0]~output_o $end
+$var wire 1 . codeS[1]~output_o $end
+$var wire 1 / codeS[2]~output_o $end
+$var wire 1 0 codeS[3]~output_o $end
+$var wire 1 1 PB1~input_o $end
+$var wire 1 2 EQ~input_o $end
+$var wire 1 3 comb~0_combout $end
+$var wire 1 4 comb~1_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+1&
+1%
+1$
+1#
+0'
+1(
+x)
+1*
+1+
+1,
+1-
+1.
+1/
+10
+01
+02
+13
+14
+$end
+#200000
+1"
+11
+03
+0-
+0&
+#400000
+1!
+0"
+12
+01
+13
+1-
+1&
+#600000
+1"
+11
+04
+0.
+0%
+#800000
+0!
+0"
+02
+01
+14
+1.
+1%
+#1000000
