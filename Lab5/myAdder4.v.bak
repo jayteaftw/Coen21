@@ -1,0 +1,9 @@
+module myAdder4(X[3:0], Y[3:0], C0, C4, S[0:3]);
+    input X[3:0], Y[3:0], C0;
+    output C4, S[0:3];
+    wire h; 
+    
+    myAdder2 one(X[1], X[0], Y[1], B[0], C0, h, S[1], S[0]);
+    myAdder2 two(X[3], X[2], Y[3], B[2], h, C4, S[3], S[2]);
+ 
+endmodule
