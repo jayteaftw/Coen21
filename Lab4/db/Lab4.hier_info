@@ -1,0 +1,83 @@
+|Main
+S0 <= Mux2to1:inst12.MuxOutput
+A0 => S0B0b:inst19.A0
+A0 => S0B0:inst.A0
+A0 => Mux2to1:inst13.Sel
+A0 => S2B1b:inst23.A0
+A0 => S2B1:inst22.A0
+B0 => Mux2to1:inst12.Sel
+B0 => S1A0:inst20.B0
+B0 => S2B1b:inst23.B0
+B0 => S2B1:inst22.B0
+S1 <= Mux2to1:inst13.MuxOutput
+A1 => S1A0b:inst21.A1
+A1 => S1A0:inst20.A1
+A1 => S2B1b:inst23.A1
+A1 => S2B1:inst22.A1
+B1 => S1A0b:inst21.B1
+B1 => S1A0:inst20.B1
+B1 => Mux2to1:inst14.Sel
+S2 <= Mux2to1:inst14.MuxOutput
+
+
+|Main|Mux2to1:inst12
+MuxOutput <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+Function => inst1.IN0
+Sel => inst1.IN1
+Sel => inst2.IN0
+FunctionBar => inst.IN0
+
+
+|Main|S0B0b:inst19
+S0B0b <= A0.DB_MAX_OUTPUT_PORT_TYPE
+A0 => S0B0b.DATAIN
+
+
+|Main|S0B0:inst
+S0B0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A0 => inst.IN0
+
+
+|Main|Mux2to1:inst13
+MuxOutput <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+Function => inst1.IN0
+Sel => inst1.IN1
+Sel => inst2.IN0
+FunctionBar => inst.IN0
+
+
+|Main|S1A0b:inst21
+S1A0b <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst.IN0
+B1 => inst.IN1
+
+
+|Main|S1A0:inst20
+S1A0 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+B0 => inst.IN0
+B1 => inst.IN1
+A1 => inst4.IN1
+
+
+|Main|Mux2to1:inst14
+MuxOutput <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+Function => inst1.IN0
+Sel => inst1.IN1
+Sel => inst2.IN0
+FunctionBar => inst.IN0
+
+
+|Main|S2B1b:inst23
+S2B1b <= inst.DB_MAX_OUTPUT_PORT_TYPE
+B0 => inst.IN0
+A0 => inst.IN1
+A1 => inst.IN2
+
+
+|Main|S2B1:inst22
+S2B1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A1 => inst2.IN0
+B0 => inst.IN0
+A0 => inst.IN1
+
+
