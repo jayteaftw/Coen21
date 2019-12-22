@@ -1,0 +1,16 @@
+vendor_name = ModelSim
+source_file = 1, Z:/dcengr/Labs/Lab2/Lab2.bdf
+source_file = 1, Z:/dcengr/Labs/Lab2/Waveform.vwf
+source_file = 1, Z:/dcengr/Labs/Lab2/Waveform1.vwf
+source_file = 1, Z:/dcengr/Labs/Lab2/db/Lab2.cbx.xml
+design_name = Lab2
+instance = comp, \LEDG[0]~output , LEDG[0]~output, Lab2, 1
+instance = comp, \LEDR[0]~output , LEDR[0]~output, Lab2, 1
+instance = comp, \SW[1]~input , SW[1]~input, Lab2, 1
+instance = comp, \SW[2]~input , SW[2]~input, Lab2, 1
+instance = comp, \SW[0]~input , SW[0]~input, Lab2, 1
+instance = comp, \inst~0 , inst~0, Lab2, 1
+design_name = hard_block
+instance = comp, \~ALTERA_ASDO_DATA1~~ibuf , ~ALTERA_ASDO_DATA1~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_FLASH_nCE_nCSO~~ibuf , ~ALTERA_FLASH_nCE_nCSO~~ibuf, hard_block, 1
+instance = comp, \~ALTERA_DATA0~~ibuf , ~ALTERA_DATA0~~ibuf, hard_block, 1
